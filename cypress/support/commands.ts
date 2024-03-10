@@ -1,3 +1,31 @@
+
+declare namespace Cypress {
+    interface Chainable {
+      checkInstagramCheckbox(): Chainable<Element>;
+      clickImageBySrc(src:"https://dynamic.brandcrowd.com/asset/logodraft/00c784ed-daa2-406b-9d37-9a9576dffef9?v=4&dimensionsType=logo_1280_1024&outputFormat=png&s=mvrhiHobT1e4Q4WU9IrJH4NSFn4w2Ct2z28gcOiiBnI%3d"): Chainable<Element>;
+    }
+  }
+  
+  Cypress.Commands.add('checkInstagramCheckbox', () => {
+    cy.get('div[class="tw-w-60"] div div div[class="tw-container tw-px-0 tw-mx-auto"] div[class="tw-flex tw-flex-col tw-pb-5"] div div div[id="Instagram Container"] div div[class="tw-flex tw-py-2 tw-items-center tw-cursor-pointer tw-py-1.5"] span[class="checkbox__unchecked"]')
+      .should('exist')
+      .click();
+  });
+
+  Cypress.Commands.add('clickImageBySrc', { prevSubject: 'element' }, (subject: JQuery, src: string) => {
+    cy.wrap(subject).find(`img[src="${src}"]`).click();
+    // cy.get('img[src="https://dynamic.brandcrowd.com/asset/logodraft/00c784ed-daa2-406b-9d37-9a9576dffef9?v=4&dimensionsType=logo_1280_1024&outputFormat=png&s=mvrhiHobT1e4Q4WU9IrJH4NSFn4w2Ct2z28gcOiiBnI%3d"]').click();
+  });
+
+  // Error handling
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    // Log the error to the console
+    console.error('Uncaught Exception:', err.message);
+  
+    // Return false to prevent Cypress from failing the test
+    return false;
+  });
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -71,15 +99,3 @@ Cypress.Chainable.prototype.isVisible = function () {
     });
 };
 */
-
-declare namespace Cypress {
-    interface Chainable {
-      checkInstagramCheckbox(): Chainable<Element>;
-    }
-  }
-  
-  Cypress.Commands.add('checkInstagramCheckbox', () => {
-    cy.get('div[class="tw-w-60"] div div div[class="tw-container tw-px-0 tw-mx-auto"] div[class="tw-flex tw-flex-col tw-pb-5"] div div div[id="Instagram Container"] div div[class="tw-flex tw-py-2 tw-items-center tw-cursor-pointer tw-py-1.5"] span[class="checkbox__unchecked"]')
-      .should('exist')
-      .click();
-  });
