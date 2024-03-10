@@ -20,12 +20,13 @@ I'd like to kindly note that I'm a combination QA engineer who has worked on man
   (2) Please download the file from the git repository https://github.com/kk-github2/kk-designcrowd.git to your local </br>
   (3) In the interest of time, I have split the test scenarios into 2 main test scrips/test cases that can be found under Cypress/integration/examples - 1_SearchPage.ts and 2_DesignEditSave.ts </br>
   (3) Use VS code and its terminal to execute  </br>
-  (4) Open cypress test runner using command npx cypress open</br>
-  (5) click open the 1_SearchPage.ts to run/execute it </br>
+  (4) Open cypress test runner using command npx cypress open to run the tests interactively</br>
+  (5) click open the 1_SearchPage.ts to run/execute it visually </br>
       What this does - Running this test script will start from the user login scenario, followed by the user wanting to create a new design. The user then searches for a specific template 'birthday' and from the designs displayed, selects Instagram category designs. </br>
-  (6) click open the 2_DesignEditSave to run/execute it </br>
+  (6) click open the 2_DesignEditSave to run/execute it visually </br>
       What this does - Running this test script will start from the Create new design page where the user clicks on a design to Edit. This action will ask the user to login, thereby authorising them to edit. This is then followed by checking key edit actions such as changing text, Undo, redo, delete and save</br>
-
+  (7) If only the runs needs to be tested please run individual file names on the terminal by passing command "npx run <filename.ts>"
+ 
 **Please read** </br>
 - I initially wanted to implement the tests based on POM(page object model). However since Cypress does not recommend using POMs and instead defining the actions under the commands.js file and calling it in the test case as per need, I have implemented similar strategy under Cypress/support/commands.js</br>
 - I use a SelectorsHub plugin for Chrome in order to locate properties of certain elements on the page </br>
