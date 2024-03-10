@@ -71,3 +71,15 @@ Cypress.Chainable.prototype.isVisible = function () {
     });
 };
 */
+
+declare namespace Cypress {
+    interface Chainable {
+      checkInstagramCheckbox(): Chainable<Element>;
+    }
+  }
+  
+  Cypress.Commands.add('checkInstagramCheckbox', () => {
+    cy.get('div[class="tw-w-60"] div div div[class="tw-container tw-px-0 tw-mx-auto"] div[class="tw-flex tw-flex-col tw-pb-5"] div div div[id="Instagram Container"] div div[class="tw-flex tw-py-2 tw-items-center tw-cursor-pointer tw-py-1.5"] span[class="checkbox__unchecked"]')
+      .should('exist')
+      .click();
+  });
