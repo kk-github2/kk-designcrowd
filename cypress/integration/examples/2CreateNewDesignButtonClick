@@ -1,0 +1,10 @@
+describe('Select Design', () => {
+  it('Selects an Design', () => {
+     cy.visit('https://www.brandcrowd.com/maker/mydesigns/logodrafts/00c784ed-daa2-406b-9d37-9a9576dffef9/templatetypes');
+     cy.get('.your-selector').then(($element) => {
+     
+       const textContent = $element.text();
+       console.log(textContent);
+     });
+  });
+ });
