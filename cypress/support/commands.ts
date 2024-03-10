@@ -29,7 +29,9 @@
 // cypress/support/commands.ts
 
 // Custom Cypress command to click 'My account' on www.brandcrowd.com
+/*
 Cypress.Commands.add('clickMyAccount', () => {
+    cy.visit('https://www.brandcrowd.com');
     cy.get('#__layout > div > div > div.o-main > section:nth-child(2) > div > div:nth-child(2) > div > div > div.swiper-container.swiper-container-initialized.swiper-container-horizontal > div > div.swiper-slide.swiper-slide-active > div > section > a > figure > img').click();
    });
 
@@ -53,4 +55,19 @@ Cypress.Commands.login = (username, password) => {
 Cypress.Commands.launchPage = (url) => {
     cy.visit('https://www.brandcrowd.com')
 }
+*/
+/*
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            isVisible: () => Chainable<boolean>;
+        }
+    }
+}
+
+Cypress.Chainable.prototype.isVisible = function () {
+    return cy.wrap(this).then(($el) => {
+        return $el.is(':visible');
+    });
+};
 */
