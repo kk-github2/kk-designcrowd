@@ -2,7 +2,11 @@ Hello reviewer/team,
 
 Thanks for giving me this challenge - I found it really interesting! 
 
-**Test scenarios** - I have defined them on a google drive file here - https://docs.google.com/spreadsheets/d/1CcAP-ltvkkwcGJBPhkxFPXW_xlOhGBuBxFfrYvOkCLc/edit?usp=sharing 
+**Test scenarios** </br> 
+I have defined them on a google drive file here - https://docs.google.com/spreadsheets/d/1CcAP-ltvkkwcGJBPhkxFPXW_xlOhGBuBxFfrYvOkCLc/edit?usp=sharing 
+
+**Improvements/Suggestions** </br>
+These are not essentially defects but key points that i noticed which could widely improve user experience. please find them on a separate tab in the same google drive spreadsheet above.
 
 **Tech Spec** </br>
 Tool - Cypress
