@@ -3,6 +3,7 @@ declare namespace Cypress {
     interface Chainable {
       checkInstagramCheckbox(): Chainable<Element>;
       clickImageBySrc(src:"https://dynamic.brandcrowd.com/asset/logodraft/00c784ed-daa2-406b-9d37-9a9576dffef9?v=4&dimensionsType=logo_1280_1024&outputFormat=png&s=mvrhiHobT1e4Q4WU9IrJH4NSFn4w2Ct2z28gcOiiBnI%3d"): Chainable<Element>;
+      downloadPdf(url: string, fileName: string): Chainable<void>;
     }
   }
   
@@ -26,6 +27,17 @@ declare namespace Cypress {
     return false;
   });
 
+// custom command for download test
+
+Cypress.Commands.add('downloadPdf', (url: string, fileName: string) => {
+    cy.request({ url, encoding: 'base64' }).then((response) => {
+     
+      expect(response.headers['content-type']).to.include('application/pdf');
+  
+      // Save the PDF file
+      cy.writeFile(fileName, response.body, 'base64');
+    });
+  });
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

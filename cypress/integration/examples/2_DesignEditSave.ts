@@ -28,8 +28,7 @@ describe('Design page test', function () {
       cy.get('span[class="tw-my-auto tw-text-center"]').contains('Delete').click(); 
       cy.get('span[class="tw-my-auto tw-text-center"]').contains('Undo').click(); 
 
-      cy.get('span[class="tw-my-auto tw-text-center"]').contains('SAVE PROGRESS').click(); 
-          
+      cy.get('[data-test-save-progress=""] > .tw-font-sans').contains('Save Progress').click();           
 
   });
 });
